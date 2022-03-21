@@ -1,3 +1,4 @@
+python==3.1
 numpy>=1.11.0
 scikit-learn==0.22.1
 cython>=0.28.5
