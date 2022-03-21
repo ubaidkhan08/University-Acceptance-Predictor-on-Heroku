@@ -8,13 +8,13 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
     inputs=np.array([[gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research]]).reshape(1, -1)
 
     from sklearn.preprocessing import StandardScaler
-    scaler = StandardScaler()
-    scaler.fit(inputs)
-    inputs = scaler.transform(inputs)
+    scalerr = StandardScaler()
+    scalerr.fit(inputs)
+    inputs = scalerr.transform(inputs)
 
-    prediction=log_model.predict(inputs)
-    pred = '{}'.format(prediction)
-    return(float(pred[1:5])*100)
+    predictionn = log_model.predict(inputs)
+    predd = '{}'.format(predictionn)
+    return(float(predd[1:5])*100)
 
 
 
