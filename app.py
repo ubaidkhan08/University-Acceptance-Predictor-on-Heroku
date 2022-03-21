@@ -14,7 +14,7 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
 
     predictionn = log_model.predict(inputs)
     predd = '{}'.format(predictionn)
-    return(float(predd[1:5])*100)
+    return(float(predd[1:7])*100)
 
 
 
