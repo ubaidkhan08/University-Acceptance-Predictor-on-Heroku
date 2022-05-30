@@ -358,13 +358,13 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
     answer = float(predd[1:7])*100
     
     if answer > 100:
-        print('100')
+        return(100)
 
     elif answer < 0:
-        print('0')
+        return(0)
 
     else:    
-        print(round(float(predd[1:7])*100))
+        return(round(float(predd[1:7])*100))
 
 def main():
     st.title("University Acceptance Predictor")
