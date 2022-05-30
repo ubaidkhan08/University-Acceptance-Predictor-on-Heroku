@@ -1,5 +1,7 @@
 import streamlit as st
 from joblib import dump, load
+import pandas as pd
+import seaborn as sns
 import numpy as np
 
 log_model = load('university_admission.joblib')
