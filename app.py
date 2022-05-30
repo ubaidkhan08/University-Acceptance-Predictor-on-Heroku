@@ -8,7 +8,7 @@ log_model = load('university_admission.joblib')
 def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research):
     inputs=np.array([[gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research]]).reshape(1, -1)
 
-    df = pd.read_csv("C:/Users/ubaid khan/Desktop/ML & DS/PROJECT/University Admission Probability/Admission_Predict.csv")
+    df = pd.read_csv("https://github.com/ubaidkhan08/University-Acceptance-Predictor-on-Heroku/blob/main/Admission_Predict.csv")
     df = df.rename(columns = {'Chance of Admit ':'Chance of Admit'})
     df = df.drop('Serial No.', axis=1)
     XX = df.drop('Chance of Admit', axis=1)
