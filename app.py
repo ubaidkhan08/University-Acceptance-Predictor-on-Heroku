@@ -6,7 +6,7 @@ import numpy as np
 log_model = load('university_admission.joblib')
 
 def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research):
-    inputs=np.array([[gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research]]).reshape(1, -1)
+    inputs=np.array([gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research])
     
     data = [[337.  , 118.  ,   4.  ,   4.5 ,   4.5 ,   9.65,   1.  ],[324.  , 107.  ,   4.  ,   4.  ,   4.5 ,   8.87,   1. ],[316.  , 104.  ,   3.  ,   3.  ,   3.5 ,   8.  ,   1.  ],
        [322.  , 110.  ,   3.  ,   3.5 ,   2.5 ,   8.67,   1.  ],[330.  , 115.  ,   5.  ,   4.5 ,   3.  ,   9.34,   1.  ],
@@ -346,12 +346,12 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
     #XX = df.drop('Chance of Admit', axis=1)
 
     XX = df
-    XX.iloc[0] = [inputs]
+    XX.iloc[0] = inputs
     XX = scalerrr.fit_transform(XX)
 
     predictionn = log_model.predict([XX[0]])
     predd = '{}'.format(predictionn)
-    return(float(predd[1:7])*100)
+    return(round(float(predd[1:7])*100))
 
 def main():
     st.title("University Acceptance Predictor")
