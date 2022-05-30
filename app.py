@@ -7,6 +7,20 @@ log_model = load('university_admission.joblib')
 def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research):
     inputs=np.array([[gre,tofel,sepal_length, sepal_width, petal_length, petal_width,research]]).reshape(1, -1)
 
+    df = pd.read_csv("C:/Users/ubaid khan/Desktop/ML & DS/PROJECT/University Admission Probability/Admission_Predict.csv")
+    df = df.rename(columns = {'Chance of Admit ':'Chance of Admit'})
+    df = df.drop('Serial No.', axis=1)
+    XX = df.drop('Chance of Admit', axis=1)
+
+    XX.iloc[0] = [inputs]
+    XX = scalerrr.fit_transform(XX)
+    log_model.predict([XX[0]])
+
+    from sklearn.preprocessing import StandardScaler
+    scalerrr = StandardScaler()
+    scalerrr.fit(inputs)
+    inputs = scalerrr.transform(inputs)
+    
     from sklearn.preprocessing import StandardScaler
     scalerr = StandardScaler()
     scalerr.fit(inputs)
@@ -16,9 +30,6 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
     predd = '{}'.format(predictionn)
     return(float(predd[1:7])*100)
 
-
-
-    
 def main():
     st.title("University Acceptance Predictor")
     html_temp = """
