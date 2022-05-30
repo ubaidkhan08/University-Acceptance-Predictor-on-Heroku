@@ -15,7 +15,6 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
 
     XX.iloc[0] = [inputs]
     XX = scalerrr.fit_transform(XX)
-    log_model.predict([XX[0]])
 
     predictionn = log_model.predict([XX[0]])
     predd = '{}'.format(predictionn)
