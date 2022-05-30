@@ -345,6 +345,7 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
     #df = df.drop('Serial No.', axis=1)
     #XX = df.drop('Chance of Admit', axis=1)
 
+    XX = df
     XX.iloc[0] = [inputs]
     XX = scalerrr.fit_transform(XX)
 
