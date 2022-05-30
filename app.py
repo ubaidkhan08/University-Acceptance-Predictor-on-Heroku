@@ -17,17 +17,7 @@ def classify(gre,tofel,sepal_length, sepal_width, petal_length, petal_width,rese
     XX = scalerrr.fit_transform(XX)
     log_model.predict([XX[0]])
 
-    from sklearn.preprocessing import StandardScaler
-    scalerrr = StandardScaler()
-    scalerrr.fit(inputs)
-    inputs = scalerrr.transform(inputs)
-    
-    from sklearn.preprocessing import StandardScaler
-    scalerr = StandardScaler()
-    scalerr.fit(inputs)
-    inputs = scalerr.transform(inputs)
-
-    predictionn = log_model.predict(inputs)
+    predictionn = log_model.predict([XX[0]])
     predd = '{}'.format(predictionn)
     return(float(predd[1:7])*100)
 
